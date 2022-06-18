@@ -8,6 +8,7 @@ unzip /tmp/catalogue.zip
 mv catalogue-main catalogue
 cd /home/roboshop/catalogue
 npm install
+sed -i -e 's/MONGO_DNSNAME/mongodb.devopsb65.online/' /home/roboshop/catalogue/systemd.service
 mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
 systemctl daemon-reload
 systemctl start catalogue
